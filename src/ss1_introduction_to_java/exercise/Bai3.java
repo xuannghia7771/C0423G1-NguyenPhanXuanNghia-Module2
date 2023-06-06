@@ -2,7 +2,7 @@ package ss1_introduction_to_java.exercise;
 
 import java.util.Scanner;
 
-public class bai3 {
+public class Bai3 {
     public static void main(String[] args) {
         int n;
         Scanner sc = new Scanner(System.in);
@@ -11,18 +11,18 @@ public class bai3 {
         String result = donVi(n);
         String result2 = hangChuc(n);
         String result3 = hangTram(n);
-        if (n > 0 && n <= 9){
+        if (n > 0 && n <= 9) {
             System.out.println(result);
-        } else if (n >= 10 && n <= 99){
+        } else if (n >= 10 && n <= 99) {
             System.out.println(result2);
-        } else if (n <= 999){
+        } else if (n <= 999) {
             System.out.println(result3);
         }
-
     }
+
     public static String donVi(int number) {
         String str = "";
-        switch (number){
+        switch (number) {
             case 1:
                 str += "one";
                 break;
@@ -53,12 +53,13 @@ public class bai3 {
         }
         return str;
     }
-    public static String hangChuc(int number){
+
+    public static String hangChuc(int number) {
         String str = "";
         int donVi = number % 10;
         int chuc = number / 10;
-        if (chuc == 1){
-            switch (donVi){
+        if (chuc == 1) {
+            switch (donVi) {
                 case 0:
                     str += "ten";
                     break;
@@ -91,8 +92,8 @@ public class bai3 {
                     break;
             }
             return str;
-        } else if (chuc > 1 && chuc <= 9){
-            switch (chuc){
+        } else if (chuc > 1 && chuc <= 9) {
+            switch (chuc) {
                 case 2:
                     str += "twenty";
                     break;
@@ -119,13 +120,14 @@ public class bai3 {
                     break;
             }
         }
-        return str+" "+donVi(donVi);
+        return str + " " + donVi(donVi);
     }
-    public static String hangTram(int number){
+
+    public static String hangTram(int number) {
         String str = "";
         int tram = number / 100;
-        int hamHangChuc = number%100;
-        switch (tram){
+        int hamHangChuc = number % 100;
+        switch (tram) {
             case 1:
                 str += "one hundred";
                 break;
@@ -154,7 +156,7 @@ public class bai3 {
                 str += "nine hundred";
                 break;
         }
-        return str+" "+hangChuc(hamHangChuc);
+        return str + " " + hangChuc(hamHangChuc);
     }
 }
 
