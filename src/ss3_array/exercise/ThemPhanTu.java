@@ -1,36 +1,31 @@
 package ss3_array.exercise;
 
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class ThemPhanTu {
     public static void main(String[] args) {
-        int[] arr = {10, 4, 6, 7, 8, 6};
+        int[] arr = {1, 2, 3};
+        int[] newArr = new int[arr.length + 1];
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter an element to add: ");
         int n = sc.nextInt();
-        int index = indexOfElement(arr, n);
-        if (index <= -1 || index >= arr.length - 1) {
-            System.out.println("Can't add!");
-        }
+        System.out.println("Enter index: ");
+        int pos = sc.nextInt();
+        addElement(arr, n, newArr, pos);
+        System.out.println(Arrays.toString(newArr));
     }
 
-    public static int indexOfElement(int[] arr, int x) {
-        for (int i = 0; i < arr.length; i++) {
-            if (x == arr[i]) {
-                return i;
+    public static void addElement(int[] arr, int element, int[] secondArr, int index) {
+        for (int i = 0; i < secondArr.length; i++) {
+            if (index == i) {
+                for (int j = index + 1; j < secondArr.length; j++) {
+                    secondArr[j] = arr[j - 1];
+                }
+                break;
             }
+            secondArr[i] = arr[i];
         }
-        return -1;
-    }
-
-    public static void deleteElement(int[] arr, int element) {
-        int position = indexOfElement(arr, element);
-        for (int i = position; i < arr.length - 1; i++) {
-            if (position != -1) {
-                arr[i] = element;
-            }
-            arr[i + 1] = arr[i];
-        }
-
+        secondArr[index] = element;
     }
 }
