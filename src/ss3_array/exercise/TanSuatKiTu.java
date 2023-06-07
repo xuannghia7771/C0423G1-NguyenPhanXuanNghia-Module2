@@ -6,9 +6,14 @@ public class TanSuatKiTu {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhap ki tu muon dem: ");
-        String n = sc.nextLine();
-        String str = "True love stories never have endings";
+        char n = sc.next().charAt(0);
+        String str = "true love stories never have endings";
         int count = 0;
-        System.out.println(str[3]);
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == n) {
+                count++;
+            }
+        }
+        System.out.println("Ki tu " + n + " xuat hien " + count + " lan");
     }
 }
