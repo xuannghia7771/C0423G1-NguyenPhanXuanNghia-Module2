@@ -8,7 +8,8 @@ import java.util.Date;
 
 //[Bài tập] Xây dựng lớp StopWatch
 public class StopWatch {
-    private long startTime, endTime;
+    private long startTime;
+    private long endTime;
 
     public long getStartTime() {
         return this.startTime;

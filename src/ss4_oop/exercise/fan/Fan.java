@@ -16,16 +16,16 @@ package ss4_oop.exercise.fan;
 //        Đối tượng Fan 1: Gán giá trị lớn nhất cho speed, radius là 10, color là yellow và quạt ở trạng thái bật.
 //        Đối tượng Fan 2: Gán giá trị trung bình cho speed, radius là 5, color là blue và quạt ở trạng thái tắt
 public class Fan {
-    final int slow = 1;
-    final int medium = 2;
-    final int fast = 3;
+    final int SLOW = 1;
+    final int MEDIUM = 2;
+    final int FAST = 3;
     private int speed;
     private boolean on;
     private double radius;
     private String color;
 
     public Fan() {
-        this.speed = slow;
+        this.speed = SLOW;
         this.on = false;
         this.radius = 5;
         this.color = "blue";
