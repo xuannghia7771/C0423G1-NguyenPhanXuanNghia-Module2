@@ -1,8 +1,8 @@
 package ss6_inheritance.exercise.point_and_moveablepoint;
 
 public class Point {
-    public float x;
-    public float y;
+    private float x;
+    private float y;
 
     public Point() {
 
