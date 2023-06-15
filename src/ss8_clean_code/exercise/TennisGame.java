@@ -7,36 +7,46 @@ public class TennisGame {
     public static final int THREE_POINT = 3;
     public static final int MIN_SCORE = 4;
 
+    public static String showDrawMatch(int playerScore) {
+        String notice = "";
+        switch (playerScore) {
+            case ZERO_POINT:
+                notice += "Love-All";
+                break;
+            case ONE_POINT:
+                notice += "Fifteen-All";
+                break;
+            case TWO_POINT:
+                notice += "Thirty-All";
+                break;
+            case THREE_POINT:
+                notice += "Forty-All";
+                break;
+            default:
+                notice += "Deuce";
+                break;
+        }
+        return notice;
+    }
+
+    public static String showResultDashBoard(int scorePlayer1, int scorePlayer2) {
+        String notice = "";
+        int minusResult = scorePlayer1 - scorePlayer2;
+        if (minusResult == 1) notice += "Advantage player1";
+        else if (minusResult == -1) notice += "Advantage player2";
+        else if (minusResult >= 2) notice += "Win for player1";
+        else notice += "Win for player2";
+        return notice;
+    }
+
     public static String getScore(String firstPlayer, String secondPlayer, int scoreOfFirstPlayer, int scoreOfSecondPlayer) {
         String notice = "";
         int temporaryScore = 0;
-        boolean isDraw = scoreOfFirstPlayer == scoreOfSecondPlayer;
-        boolean isOver4 = scoreOfFirstPlayer >= MIN_SCORE || scoreOfSecondPlayer >= MIN_SCORE;
-        if (isDraw) {
-            switch (scoreOfFirstPlayer) {
-                case ZERO_POINT:
-                    notice = "Love-All";
-                    break;
-                case ONE_POINT:
-                    notice = "Fifteen-All";
-                    break;
-                case TWO_POINT:
-                    notice = "Thirty-All";
-                    break;
-                case THREE_POINT:
-                    notice = "Forty-All";
-                    break;
-                default:
-                    notice = "Deuce";
-                    break;
+        if (scoreOfFirstPlayer == scoreOfSecondPlayer) {
+            return showDrawMatch(scoreOfFirstPlayer);
 
-            }
-        } else if (isOver4) {
-            int minusResult = scoreOfFirstPlayer - scoreOfSecondPlayer;
-            if (minusResult == 1) notice = "Advantage player1";
-            else if (minusResult == -1) notice = "Advantage player2";
-            else if (minusResult >= 2) notice = "Win for player1";
-            else notice = "Win for player2";
+        } else if (scoreOfFirstPlayer >= MIN_SCORE || scoreOfSecondPlayer >= MIN_SCORE) {
+            return showResultDashBoard(scoreOfFirstPlayer, scoreOfSecondPlayer);
         } else {
             for (int i = 1; i < 3; i++) {
                 if (i == 1) temporaryScore = scoreOfFirstPlayer;
