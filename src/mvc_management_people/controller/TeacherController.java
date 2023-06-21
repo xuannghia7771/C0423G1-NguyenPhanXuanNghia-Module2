@@ -1,6 +1,6 @@
-package mvc.controller;
+package mvc_management_people.controller;
 
-import mvc.service.TeacherService;
+import mvc_management_people.service.TeacherService;
 
 
 import java.util.Scanner;

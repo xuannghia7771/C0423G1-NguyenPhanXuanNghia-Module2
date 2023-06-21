@@ -33,6 +33,20 @@ public class ProductRepository implements IProductRepository{
     public void addNewProduct(Product product) {
         productList.add(product);
     }
+
+    @Override
+    public int indexOfProduct(int id) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (id == productList.get(i).getId()){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+
+
     public void editProduct(Product product) {
         for (Product p : productList) {
             if(p.getId() == product.getId()) {

@@ -5,5 +5,8 @@ import java.util.*;
 public interface IProductRepository {
     List<Product> getProductList();
     void addNewProduct(Product product);
+
+    int indexOfProduct(int id);
+    //void deleteProduct();
     void editProduct(Product product);
 }

@@ -1,4 +1,4 @@
-package mvc.model;
+package mvc_management_people.model;
 
 public class Teacher {
     private int id;

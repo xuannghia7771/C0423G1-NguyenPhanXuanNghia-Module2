@@ -1,6 +1,6 @@
-package mvc.repository;
+package mvc_management_people.repository;
 
-import mvc.model.Teacher;
+import mvc_management_people.model.Teacher;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package mvc.service;
+package mvc_management_people.service;
 
 public interface ITeacherService {
     void display();

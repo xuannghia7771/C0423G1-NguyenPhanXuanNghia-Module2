@@ -1,7 +1,6 @@
 package ss12_map_and_tree.exercise.product_managment.service;
 
-import org.omg.CORBA.INTERNAL;
-import org.omg.PortableInterceptor.INACTIVE;
+
 import ss12_map_and_tree.exercise.product_managment.model.Product;
 import ss12_map_and_tree.exercise.product_managment.repository.IProductRepository;
 import ss12_map_and_tree.exercise.product_managment.repository.ProductRepository;
@@ -32,16 +31,28 @@ public class ProductService implements IProductService{
         productRepository.addNewProduct(newProduct);
     }
 
+    public void deleteProductById(){
+        Scanner sc = new Scanner(System.in);
+        displayProductList();
+        System.out.print("Nhập id muốn xóa: ");
+        int id = Integer.parseInt(sc.nextLine());
+        if (productRepository.indexOfProduct(id)==-1){
+            System.out.println("Ko tim thay san pham");
+        } else {
+
+        }
+    }
+
     @Override
     public void editProduct() {
         Scanner scanner = new Scanner(System.in);
         displayProductList();
         System.out.print("Nhập id muốn sửa: ");
-        int idStudentEdit = Integer.parseInt(scanner.nextLine());
+        int idProductEdit = Integer.parseInt(scanner.nextLine());
         Product productEdit = null;
-        List<Product> studentList = productRepository.getProductList();
-        for (Product s: studentList) {
-            if(s.getId() == idStudentEdit) {
+        List<Product> productList = productRepository.getProductList();
+        for (Product s: productList) {
+            if(s.getId() == idProductEdit) {
                 productEdit = s;
             }
         }
