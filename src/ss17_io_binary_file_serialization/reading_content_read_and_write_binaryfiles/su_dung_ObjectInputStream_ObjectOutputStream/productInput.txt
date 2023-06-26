@@ -1,0 +1,1 @@
+�� sr �ss17_io_binary_file_serialization.reading_content_read_and_write_binaryfiles.su_dung_ObjectInputStream_ObjectOutputStream.Product�Lw���i I idD priceL descriptiont Ljava/lang/String;L nameq ~ xp   AE\�    t Newt 	IPhone 12
